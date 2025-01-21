@@ -1,12 +1,12 @@
-
-import './App.css'
+import { BaseRoutes } from "./routes/BaseRoutes";
+import "./App.css";
 
 function App() {
-
   return (
-    <> 
+    <>
+      <BaseRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
