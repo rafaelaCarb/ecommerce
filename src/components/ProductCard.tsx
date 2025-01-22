@@ -17,7 +17,7 @@ interface ProductCardProps {
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   return (
     <Link to={`/product/${product.id}`} className="group relative block">
-      <div className="relative aspect-[3/4] mb-4">
+      <div className="relative mb-4">
         <img src={product.image || "/placeholder.svg"} alt={product.name} className="object-cover w-full h-full" />
         <button
           className="absolute top-2 left-5 p-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity"
