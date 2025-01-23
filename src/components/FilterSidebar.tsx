@@ -1,3 +1,5 @@
+import { ArrowLeft } from "lucide-react";
+
 export function FilterSidebar() {
   return (
     <div className="w-64 border-r border-gray-200 p-6 space-y-6">
@@ -73,7 +75,8 @@ export function FilterSidebar() {
         <button className="w-full text-white bg-black p-1 rounded-sm text-sm">
           FILTRAR
         </button>
-        <button className="w-full mt-3 text-black border-black border p-1 rounded-sm text-sm">
+        <button className="w-full mt-3 flex gap-2 justify-center items-center text-black border-black border p-1 rounded-sm text-sm">
+          <ArrowLeft size={15}/>
           VER TODOS
         </button>
       </div>

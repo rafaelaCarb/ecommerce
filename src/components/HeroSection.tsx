@@ -9,7 +9,7 @@ const HeroSection = () => {
       <img src={banner} alt="Banner" className="w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
       <div className="absolute bottom-10 w-full flex flex-col items-center text-white text-center">
-        <p className="font-raleway mt-4 drop-shadow-md">SPRING SUMMER</p>
+        <p className="font-inter mt-4 drop-shadow-md">SPRING SUMMER</p>
         <h1 className="text-xl tracking-wide md:text-4xl drop-shadow-lg font-raleway">
           TELL ME MORE
         </h1>

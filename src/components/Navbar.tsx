@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`z-20 font-raleway fixed top-0 left-0 right-0 transition-all duration-300 ${
+      className={`z-20 font-inter fixed top-0 left-0 right-0 transition-all duration-300 ${
         isSticky ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >

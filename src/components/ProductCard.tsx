@@ -1,4 +1,4 @@
-import React, { type FC } from "react"
+import { type FC } from "react"
 import { Link } from "react-router-dom"
 import { Heart } from "lucide-react"
 
@@ -16,16 +16,12 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   return (
-    <Link to={`/product/${product.id}`} className="group relative block">
+    <Link to={`/produto/${product.id}`} className="group relative block">
       <div className="relative mb-4">
         <img src={product.image || "/placeholder.svg"} alt={product.name} className="object-cover w-full h-full" />
         <button
           className="absolute top-2 left-5 p-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity"
           aria-label="Add to wishlist"
-          onClick={(e) => {
-            e.preventDefault()
-            // Add wishlist functionality here
-          }}
         >
           <Heart className="w-5 h-5" />
         </button>
@@ -39,10 +35,6 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             className="w-4 h-4 rounded-full border border-gray-200"
             style={{ backgroundColor: color }}
             aria-label={`Select color ${index + 1}`}
-            onClick={(e) => {
-              e.preventDefault()
-              // Add color selection functionality here
-            }}
           />
         ))}
       </div>
