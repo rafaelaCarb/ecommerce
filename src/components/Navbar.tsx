@@ -1,7 +1,8 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Search, User, Heart, ShoppingCart } from 'lucide-react';
+import { Menu, X, Search, User, Heart, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,26 +54,44 @@ const Navbar = () => {
 
           <div
             className={`${
-              isMenuOpen ? 'flex' : 'hidden md:flex'
+              isMenuOpen ? "flex" : "hidden md:flex"
             } flex-col md:flex-row items-center md:space-x-8 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0 space-y-4 md:space-y-0`}
           >
-            <a href="/" className="text-sm hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+            <a
+              href="/"
+              className="text-sm hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
               INÍCIO
             </a>
-            <a href="/" className="text-sm hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+            <a
+              href="/"
+              className="text-sm hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
               HOMEM
             </a>
-            <a href="/" className="text-sm hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+            <a
+              href="/"
+              className="text-sm hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
               MULHER
             </a>
-            <a href="/" className="text-sm hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+            <a
+              href="/"
+              className="text-sm hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
               ACESSÓRIOS
             </a>
           </div>
 
           <div className="flex items-center space-x-4">
             <Search size={17} />
-            <User size={17} />
+            <Link to="/login">
+              <User size={17} />
+            </Link>
             <Heart size={17} />
             <ShoppingCart size={17} />
           </div>
@@ -83,4 +102,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

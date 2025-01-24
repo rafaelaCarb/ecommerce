@@ -1,7 +1,7 @@
 const LoginSection = () => {
   return (
-    <div className="flex w-screen h-screen items-center justify-center">
-      <div className="w-full max-w-xl space-y-8 px-4 sm:px-6 shadow-lg p-4 rounded-lg">
+    <div className="bg-gradient-to-b from-amber-100 from-0% via-rose-100 via-50% to-gray-300 to-100% flex w-screen h-screen items-center justify-center">
+      <div className="bg-white w-full max-w-xl space-y-8 px-4 sm:px-6 shadow-lg p-9 rounded-lg">
         <div className="space-y-2 text-center">
           <h1 className="text-4xl font-inter"> GLAMIFY </h1>
           <h1 className="text-4xl font-inter">Bem vindo de volta!</h1>
@@ -74,7 +74,7 @@ const LoginSection = () => {
 
         <div className="text-center text-sm text-gray-500">
           Não possui uma conta?{" "}
-          <a href="#" className="font-medium text-stone-600">
+          <a href="/cadastro" className="font-medium text-stone-600">
             Cadastre-se
           </a>
         </div>
