@@ -13,17 +13,7 @@ import image12 from "../assets/clothes/image12.png";
 import image13 from "../assets/clothes/image13.png";
 import image14 from "../assets/clothes/image14.png";
 import image15 from "../assets/clothes/image15.png";
-
-interface Product {
-  id: number
-  name: string
-  price: number
-  image: string
-  sizes: string[]
-  colors: string[]
-  rating: number
-  reviews: number
-}
+import { Product } from "../commons/interfaces";
 
 export const products: Product[] = [
   {
