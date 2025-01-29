@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
 import { allProducts } from "../constants/index";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 interface ProductSectionProps {
   id: string | number;
@@ -10,7 +11,7 @@ interface ProductSectionProps {
 
 export default function ProductSection({ id }: ProductSectionProps) {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
+  const { increaseCartQuantity } = useShoppingCart();
   const product = allProducts.find((p) => p.id === id);
 
   if (!product) {
@@ -20,8 +21,7 @@ export default function ProductSection({ id }: ProductSectionProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="order-2 md:order-1 flex md:flex-col gap-4">
-        </div>
+        <div className="order-2 md:order-1 flex md:flex-col gap-4"></div>
 
         <div className="w-1/2 flex items-center justify-center">
           <img
@@ -102,7 +102,7 @@ export default function ProductSection({ id }: ProductSectionProps) {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <button
-                onClick={() => alert("Added to cart")}
+                onClick={() => increaseCartQuantity(product.id)}
                 className="flex-1 bg-black text-white py-4 px-6"
               >
                 ADD TO CART
