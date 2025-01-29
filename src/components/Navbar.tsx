@@ -93,7 +93,9 @@ const Navbar = () => {
               <User size={17} />
             </Link>
             <Heart size={17} />
-            <ShoppingCart size={17} />
+            <Link to="/carrinho">
+              <ShoppingCart size={17} />
+            </Link>
           </div>
         </div>
       </nav>
