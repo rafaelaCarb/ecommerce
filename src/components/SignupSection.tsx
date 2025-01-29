@@ -43,7 +43,7 @@ const SignupSection: React.FC = () => {
         password: "",
       });
     } catch (error) {
-      setError("Ocorreu um erro ao criar a conta.", error);
+      setError("Ocorreu um erro ao criar a conta.");
       setMessage(null);
     }
   };
