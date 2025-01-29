@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  password: string;
-}
+import { FormData } from "../commons/interfaces";
 
 const SignupSection: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -28,7 +22,6 @@ const SignupSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    // Validação básica
     if (
       !formData.name ||
       !formData.email ||
@@ -40,11 +33,7 @@ const SignupSection: React.FC = () => {
       return;
     }
 
-    // Simulação de envio (substitua com lógica real)
     try {
-      // Aqui você pode enviar os dados para uma API ou backend
-      console.log("Dados enviados:", formData);
-
       setMessage("Conta criada com sucesso!");
       setError(null);
       setFormData({
@@ -53,8 +42,8 @@ const SignupSection: React.FC = () => {
         phone: "",
         password: "",
       });
-    } catch (err) {
-      setError("Ocorreu um erro ao criar a conta.");
+    } catch (error) {
+      setError("Ocorreu um erro ao criar a conta.", error);
       setMessage(null);
     }
   };

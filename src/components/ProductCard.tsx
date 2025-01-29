@@ -1,20 +1,14 @@
 import { type FC } from "react"
 import { Link } from "react-router-dom"
 import { Heart } from "lucide-react"
-
-interface Product {
-  id: number
-  name: string
-  price: number
-  image: string
-  colors: string[]
-}
+import { Product } from "../commons/interfaces"
 
 interface ProductCardProps {
   product: Product
 }
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
+
   return (
     <Link to={`/produto/${product.id}`} className="group relative block">
       <div className="relative mb-4">
@@ -23,7 +17,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           className="absolute top-2 left-5 p-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity"
           aria-label="Add to wishlist"
         >
-          <Heart className="w-5 h-5" />
+          <Heart className="w-5 h-5 hover:fill-black" />
         </button>
       </div>
       <h3 className="text-sm mb-2">{product.name}</h3>

@@ -21,7 +21,6 @@ export function FilterSidebar() {
         </div>
       </div>
 
-      {/* Product Type Filter */}
       <div className="space-y-4">
         <h3 className="font-medium text-lg">Product Type</h3>
         <div className="space-y-2">
@@ -40,7 +39,6 @@ export function FilterSidebar() {
         </div>
       </div>
 
-      {/* Price Range Filter */}
       <div className="space-y-4">
         <h3 className="font-medium text-lg">Price Range</h3>
         <input type="range" min="0" max="100" className="w-full" />
@@ -50,7 +48,6 @@ export function FilterSidebar() {
         </div>
       </div>
 
-      {/* Color Filter */}
       <div className="space-y-4">
         <h3 className="font-medium text-lg">Color</h3>
         <div className="space-y-2">

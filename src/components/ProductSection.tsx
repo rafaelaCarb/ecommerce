@@ -20,29 +20,23 @@ export default function ProductSection({ id }: ProductSectionProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Thumbnails */}
         <div className="order-2 md:order-1 flex md:flex-col gap-4">
-          {/*product.image.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedImage(index)}
-              className={`w-16 h-16 border ${selectedImage === index ? "border-black" : "border-gray-200"}`}
-            >
-              <img src={image.url || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
-            </button>
-          ))}*/}
         </div>
 
-        {/* Main Image */}
         <div className="w-1/2 flex items-center justify-center">
-          <img src={product.image} className="aspect-[4/5] object-cover w-full" />
+          <img
+            src={product.image}
+            className="aspect-[4/5] object-cover w-full"
+          />
         </div>
 
         <div className="md:w-1/2">
           <nav className="flex items-center gap-2 text-sm mb-6 text-orange-400">
             GLAMIFY
           </nav>
-          <h1 className="text-3xl font-inter tracking-wide mb-2">{product.name}</h1>
+          <h1 className="text-3xl font-inter tracking-wide mb-2">
+            {product.name}
+          </h1>
 
           <div className="flex items-center gap-2 mb-6">
             <div className="flex">
@@ -107,7 +101,10 @@ export default function ProductSection({ id }: ProductSectionProps) {
 
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <button className="flex-1 bg-black text-white py-4 px-6">
+              <button
+                onClick={() => alert("Added to cart")}
+                className="flex-1 bg-black text-white py-4 px-6"
+              >
                 ADD TO CART
               </button>
             </div>

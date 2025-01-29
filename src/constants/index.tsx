@@ -17,7 +17,6 @@ import image15 from "../assets/clothes/image15.png";
 interface Product {
   id: number
   name: string
-  code: string
   price: number
   image: string
   sizes: string[]
@@ -30,7 +29,6 @@ export const products: Product[] = [
   {
     id: 16,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     image: image1,
     sizes: ["XS", "S", "M", "L"],
@@ -41,7 +39,6 @@ export const products: Product[] = [
   {
     id: 17,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     image: image2,
     sizes: ["XS", "S", "M", "L"],
@@ -52,7 +49,6 @@ export const products: Product[] = [
   {
     id: 18,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     sizes: ["XS", "S", "M", "L"],
     image: image3,
@@ -63,7 +59,6 @@ export const products: Product[] = [
   {
     id: 19,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     sizes: ["XS", "S", "M", "L"],
     image: image4,
@@ -77,7 +72,6 @@ export const allProducts: Product[] = [
   {
     id: 1,
     name: "TENCIL BLEND POLO",
-    code: "MA524ET0052-SML-BRN",
     price: 9500.0,
     image: image5,
     sizes: ["XS", "S", "M", "L", "XL"],
@@ -88,7 +82,6 @@ export const allProducts: Product[] = [
   {
     id: 5,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0055-SML-BRN",
     price: 9950.0,
     image:image6,
     sizes: ["XS", "S", "M", "L"],
@@ -99,7 +92,6 @@ export const allProducts: Product[] = [
   {
     id: 6,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0056-SML-DBR",
     price: 9950.0,
     image: image7,
     sizes: ["XS", "S", "M", "L"],
@@ -110,7 +102,6 @@ export const allProducts: Product[] = [
   {
     id: 7,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0057-SML-BLU",
     price: 9950.0,
     image: image8,
     sizes: ["XS", "S", "M", "L"],
@@ -121,7 +112,6 @@ export const allProducts: Product[] = [
   {
     id: 8,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0058-SML-CHO",
     price: 9950.0,
     image: image9,
     sizes: ["XS", "S", "M", "L"],
@@ -132,7 +122,6 @@ export const allProducts: Product[] = [
   {
     id: 9,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0059-SML-GRY",
     price: 9950.0,
     image: image10,
     sizes: ["XS", "S", "M", "L"],
@@ -143,7 +132,6 @@ export const allProducts: Product[] = [
   {
     id: 10,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0060-SML-RED",
     price: 9950.0,
     image: image11,
     sizes: ["XS", "S", "M", "L"],
@@ -154,7 +142,6 @@ export const allProducts: Product[] = [
   {
     id: 11,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0061-SML-OLV",
     price: 9950.0,
     image: image12,
     sizes: ["XS", "S", "M", "L"],
@@ -165,7 +152,6 @@ export const allProducts: Product[] = [
   {
     id: 12,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0062-SML-GLD",
     price: 9950.0,
     image: image13,
     sizes: ["XS", "S", "M", "L"],
@@ -176,7 +162,6 @@ export const allProducts: Product[] = [
   {
     id: 13,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0063-SML-DGR",
     price: 9950.0,
     image: image14,
     sizes: ["XS", "S", "M", "L"],
@@ -187,7 +172,6 @@ export const allProducts: Product[] = [
   {
     id: 14,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0064-SML-MRN",
     price: 9950.0,
     image: image15,
     sizes: ["XS", "S", "M", "L"],
@@ -198,7 +182,6 @@ export const allProducts: Product[] = [
   {
     id: 15,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0064-SML-MRN",
     price: 9950.0,
     image: image15,
     sizes: ["XS", "S", "M", "L"],
@@ -209,7 +192,6 @@ export const allProducts: Product[] = [
   {
     id: 16,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     image: image1,
     sizes: ["XS", "S", "M", "L"],
@@ -220,7 +202,6 @@ export const allProducts: Product[] = [
   {
     id: 17,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     image: image2,
     sizes: ["XS", "S", "M", "L"],
@@ -231,7 +212,6 @@ export const allProducts: Product[] = [
   {
     id: 18,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     sizes: ["XS", "S", "M", "L"],
     image: image3,
@@ -242,7 +222,6 @@ export const allProducts: Product[] = [
   {
     id: 19,
     name: "CUTWORK POPLIN DRESS",
-    code: "WD524ET0051-SML-BGE",
     price: 9950.0,
     sizes: ["XS", "S", "M", "L"],
     image: image4,
