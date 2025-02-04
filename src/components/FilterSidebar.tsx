@@ -1,8 +1,14 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react"
 
-export function FilterSidebar() {
+export function FilterSidebar({ onClose }: { onClose: () => void }) {
   return (
-    <div className="w-64 border-r border-gray-200 p-6 space-y-6">
+    <div className="w-64 border-r border-gray-200 p-6 space-y-6 bg-white h-full">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="font-bold text-xl">Filtros</h2>
+        <button onClick={onClose} className="md:hidden">
+          <X size={24} />
+        </button>
+      </div>
       <div className="space-y-4">
         <h3 className="font-medium text-lg">Tamanho</h3>
         <div className="space-y-2">
@@ -69,11 +75,12 @@ export function FilterSidebar() {
         </div>
       </div>
       <div>
-        <button className="w-full text-white bg-black p-1 rounded-sm text-sm">
-          FILTRAR
-        </button>
-        <button className="w-full mt-3 flex gap-2 justify-center items-center text-black border-black border p-1 rounded-sm text-sm">
-          <ArrowLeft size={15}/>
+        <button className="w-full text-white bg-black p-1 rounded-sm text-sm">FILTRAR</button>
+        <button
+          className="w-full mt-3 flex gap-2 justify-center items-center text-black border-black border p-1 rounded-sm text-sm"
+          onClick={onClose}
+        >
+          <ArrowLeft size={15} />
           VER TODOS
         </button>
       </div>
