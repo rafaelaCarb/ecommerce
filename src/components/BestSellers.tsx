@@ -6,12 +6,12 @@ const BestSellers: FC = () => {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-medium mb-2">BESTSELLERS</h2>
+        <h2 className="text-2xl font-medium mb-2">MAIS VENDIDOS</h2>
         <a
           href="/produtos"
           className="inline-block text-sm border border-gray-200 px-6 py-1 hover:bg-gray-50 transition-colors"
         >
-          VIEW ALL
+          VER TODOS
         </a>
       </div>
 

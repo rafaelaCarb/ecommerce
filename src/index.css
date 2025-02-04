@@ -4,7 +4,30 @@
 @tailwind utilities;
 
 .font-inter {
-    font-family: "Tenor Sans", serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Tenor Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in-out {
+  animation: fadeInOut 4s cubic-bezier(0.4, 0, 0.2, 1);
+}

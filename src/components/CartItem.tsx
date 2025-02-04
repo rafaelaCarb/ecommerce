@@ -17,7 +17,6 @@ export function CartItem({ id, quantity }: CartItemProps) {
         <img src={item.image || "/placeholder.svg"} alt={item.name} className="w-20 h-20 object-cover" />
         <div>
           <h3 className="text-sm font-medium">{item.name}</h3>
-          <p className="text-xs text-gray-500">Color: Midnight</p>
         </div>
       </div>
       <div className="flex items-center">

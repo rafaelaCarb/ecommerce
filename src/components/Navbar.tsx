@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Search, User, Heart, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { useShoppingCart } from "../context/ShoppingCartContext";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const { cartQuantity } = useShoppingCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +95,19 @@ const Navbar = () => {
             </Link>
             <Heart size={17} />
             <Link to="/carrinho">
-              <ShoppingCart size={17} />
+              <div className="relative">
+                {cartQuantity ? (
+                  <>
+                    {" "}
+                    <div className="w-4 h-4 text-xs bg-red-500 absolute -right-3 -top-3 rounded-full flex items-center justify-center text-white font-semibold">
+                      {cartQuantity}
+                    </div>
+                  </>
+                ) : (
+                  <></>
+                )}
+                <ShoppingCart size={17} />
+              </div>
             </Link>
           </div>
         </div>

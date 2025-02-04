@@ -4,7 +4,7 @@ export function FilterSidebar() {
   return (
     <div className="w-64 border-r border-gray-200 p-6 space-y-6">
       <div className="space-y-4">
-        <h3 className="font-medium text-lg">Size</h3>
+        <h3 className="font-medium text-lg">Tamanho</h3>
         <div className="space-y-2">
           {["Small", "Medium", "Large", "X Large"].map((size) => (
             <div key={size} className="flex items-center space-x-2">
@@ -22,7 +22,7 @@ export function FilterSidebar() {
       </div>
 
       <div className="space-y-4">
-        <h3 className="font-medium text-lg">Product Type</h3>
+        <h3 className="font-medium text-lg">Tipo do produto</h3>
         <div className="space-y-2">
           {["Polo", "T-Shirts", "Shirts"].map((type) => (
             <div key={type} className="flex items-center space-x-2">
@@ -40,7 +40,7 @@ export function FilterSidebar() {
       </div>
 
       <div className="space-y-4">
-        <h3 className="font-medium text-lg">Price Range</h3>
+        <h3 className="font-medium text-lg">Preço</h3>
         <input type="range" min="0" max="100" className="w-full" />
         <div className="flex justify-between text-sm text-stone-500">
           <span>$0</span>
@@ -49,7 +49,7 @@ export function FilterSidebar() {
       </div>
 
       <div className="space-y-4">
-        <h3 className="font-medium text-lg">Color</h3>
+        <h3 className="font-medium text-lg">Cor</h3>
         <div className="space-y-2">
           {["Black", "Brown", "Red", "Grey", "White"].map((color) => (
             <div key={color} className="flex items-center space-x-2">

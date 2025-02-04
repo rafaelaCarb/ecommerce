@@ -6,31 +6,31 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="space-y-4">
           <nav className="space-y-3">
-            <h3 className="text-sm font-medium uppercase mb-4">About Us</h3>
+            <h3 className="text-sm font-medium uppercase mb-4">Sobre Nós</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-sm hover:underline">CAREERS</a></li>
+              <li><a href="#" className="text-sm hover:underline">CARREIRA</a></li>
               <li><a href="#" className="text-sm hover:underline">FAQs</a></li>
-              <li><a href="#" className="text-sm hover:underline">CONTACT US</a></li>
-              <li><a href="#" className="text-sm hover:underline">PRIVACY POLICY</a></li>
+              <li><a href="#" className="text-sm hover:underline">CONTATO</a></li>
+              <li><a href="#" className="text-sm hover:underline">POLÍTICA DE PRIVACIDADE</a></li>
             </ul>
           </nav>
         </div>
 
         <div className="space-y-4">
           <div className="space-y-4">
-            <h3 className="text-sm font-medium uppercase">Sign up and save</h3>
-            <p className="text-sm">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+            <h3 className="text-sm font-medium uppercase">Registre-se e economize</h3>
+            <p className="text-sm">Inscreva-se para receber ofertas especiais, brindes gratuitos e ofertas únicas</p>
             <form className="flex gap-2">
               <div className="flex-1">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Coloque seu email"
                   className="w-full px-3 py-2 border border-gray-300 text-sm"
                   required
                 />
               </div>
               <button type="submit" className="border border-gray-900 p-1">
-                <span className="sr-only">Submit</span>
+                <span className="sr-only">Enviar</span>
                 →
               </button>
             </form>
@@ -50,17 +50,15 @@ const Footer = () => {
 
         <div className="space-y-6">
           <div>
-            <h3 className="text-sm font-medium uppercase mb-4">Store Location</h3>
+            <h3 className="text-sm font-medium uppercase mb-4">Localização da loja</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="text-sm font-medium">LAHORE</h4>
-                <p className="text-sm">FLAGSHIP STORE</p>
-                <p className="text-sm">22-A, Block P, Gulberg-II Lahore, Pakistan</p>
+                <p className="text-sm">101 Bloco V, UTFPR, Fraron - PB</p>
               </div>
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-medium uppercase mb-2">Customer Service</h3>
+            <h3 className="text-sm font-medium uppercase mb-2">Serviço</h3>
             <div className="flex items-center gap-2">
               <a href="mailto:email@example.com" className="text-sm hover:underline inline-flex items-center gap-1">
                 <Mail className="w-4 h-4" />

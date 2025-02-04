@@ -16,7 +16,7 @@ const AllProducts: FC = () => {
           <></>
         ) : (
           <>
-            <h2 className="text-2xl font-medium">ALL PRODUCTS</h2>
+            <h2 className="text-2xl font-medium">TODOS PRODUTOS</h2>
             <button
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className="inline-flex mt-2 items-center text-sm border border-gray-200 px-6 py-1 hover:bg-gray-50 transition-colors"
