@@ -22,7 +22,7 @@ const ShoppingCart = () => {
     <div className="container mx-auto py-24">
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <h2 className="text-2xl font-inter mb-6">CARRINHO DE COMPRAS</h2>
+          <h2 className="text-2xl font-inter mb-6 text-center sm:text-start">CARRINHO DE COMPRAS</h2>
           {cartQuantity ? (
             <>
               {" "}
@@ -35,7 +35,7 @@ const ShoppingCart = () => {
           ) : (
             <>
               <div className="flex items-center justify-center">
-                <div className="w-1/3 p-1 text-center text-xl shadow-sm font-light border rounded-md">
+                <div className="md:w-1/3 p-1 text-center text-xl shadow-sm font-light border rounded-md">
                   Seu carrinho está vazio!
                 </div>
               </div>
