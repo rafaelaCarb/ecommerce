@@ -56,6 +56,12 @@ const AllProducts: FC = () => {
           <SlidersHorizontal size={16} className="mr-2" />
           FILTRAR
         </button>
+
+        {!products?.length ?
+          <h2 className="mt-16 text-xl">
+            Nenhum produto encontrado
+          </h2>
+          : null}
       </div>
 
       <div className="flex">

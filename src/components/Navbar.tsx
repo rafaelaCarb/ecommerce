@@ -66,21 +66,21 @@ const Navbar = () => {
               INÍCIO
             </a>
             <a
-              href="/"
+              href="/produtos?category=1"
               className="text-sm hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               HOMEM
             </a>
             <a
-              href="/"
+              href="/produtos?category=2"
               className="text-sm hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               MULHER
             </a>
             <a
-              href="/"
+              href="/produtos?category=5"
               className="text-sm hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
