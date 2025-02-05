@@ -13,7 +13,7 @@ import image12 from "../assets/clothes/image12.png";
 import image13 from "../assets/clothes/image13.png";
 import image14 from "../assets/clothes/image14.png";
 import image15 from "../assets/clothes/image15.png";
-import { Product } from "../commons/interfaces";
+import { Product } from "../commons/product";
 
 export const products: Product[] = [
   {
