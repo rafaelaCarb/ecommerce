@@ -22,7 +22,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       </div>
       <h3 className="text-sm mb-2">{product.name}</h3>
       <p className="text-sm mb-3">R${product.price.toLocaleString()}</p>
-      <div className="flex gap-2">
+      {/* <div className="flex gap-2">
         {product.colors.map((color, index) => (
           <button
             key={index}
@@ -30,8 +30,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
             style={{ backgroundColor: color }}
             aria-label={`Select color ${index + 1}`}
           />
-        ))}
-      </div>
+        ))} */}
+      {/* </div> */}
     </Link>
   )
 }
