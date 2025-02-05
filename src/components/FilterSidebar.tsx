@@ -3,6 +3,7 @@ import { ArrowLeft, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { CategoryService } from "../service/CategoryService";
 import { Category } from "../commons/category";
+import { FilterOption } from "./FilterOption";
 
 const COLORS = [
   { label: "Preto", value: "BLACK" },
@@ -21,25 +22,6 @@ const SIZES = [
   { label: "GG", value: "GG" }
 ];
 
-const FilterOption = ({ title, options, selected, onChange }: { title: string, options: { label: string, value: string }[], selected: string[], onChange: (value: string) => void }) => (
-  <div className="space-y-4">
-    <h3 className="font-medium text-lg">{title}</h3>
-    <div className="space-y-2">
-      {options.map(({ label, value }) => (
-        <div key={value} className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            id={value}
-            className="w-4 h-4"
-            checked={selected.includes(value)}
-            onChange={() => onChange(value)}
-          />
-          <label htmlFor={value} className="text-sm font-thin">{label}</label>
-        </div>
-      ))}
-    </div>
-  </div>
-);
 
 export function FilterSidebar({ onClose }: { onClose: () => void }) {
   const navigate = useNavigate();
