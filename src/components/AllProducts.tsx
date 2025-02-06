@@ -7,6 +7,19 @@ import { ProductService } from "../service/ProductService";
 import { Product } from "../commons/product";
 import { FilterType, SearchRequest } from "../commons/search";
 
+function genFilter(filter: string) {
+  switch (filter) {
+    case "category":
+      return "categories.id";
+    case "size":
+      return "size"
+    case "color":
+      return "color"
+    default:
+      return filter;
+  }
+}
+
 const AllProducts: FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -24,13 +37,12 @@ const AllProducts: FC = () => {
       filters: [],
     };
 
-    // , "color", "size"
-    ["category"].forEach((filter) => {
+    ["category", "color", "size"].forEach((filter) => {
       if (searchParams.has(filter)) {
         params?.filters?.push({
-          field: filter === "category" ? "categories.id" : filter,
+          field: genFilter(filter),
           value: searchParams.get(filter) ? searchParams.get(filter)?.split(",") : "",
-          type: FilterType.IN,
+          type: FilterType.IN
         });
       }
     });
