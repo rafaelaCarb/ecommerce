@@ -1,4 +1,4 @@
-import SignupSection from "../components/SignupSection";
+import SignupSection from "../components/Form/SignupSection";
 const SignupPage = () => {
   return (
     <div>

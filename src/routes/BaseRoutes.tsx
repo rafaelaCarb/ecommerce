@@ -4,8 +4,9 @@ import ProductsPage from "../pages/ProductsPage";
 import ProductPage from "../pages/ProductPage";
 import ShoppingCart from "../pages/ShoppingCartPage";
 
-import LoginSection from "../components/LoginSection";
-import SignupSection from "../components/SignupSection";
+import LoginSection from "../components/Form/LoginSection";
+import SignupSection from "../components/Form/SignupSection";
+import Payment from "../pages/Payment";
 
 export function BaseRoutes() {
   return (
@@ -17,6 +18,7 @@ export function BaseRoutes() {
         <Route path="/produto/:id" element={<ProductPage />} />
         <Route path="/cadastro" element={<SignupSection />} />
         <Route path="/carrinho" element={<ShoppingCart />} />
+        <Route path="/pagamento" element={<Payment />} />
       </Routes>
     </>
   );
