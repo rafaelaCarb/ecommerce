@@ -27,7 +27,6 @@ const AddressForm: React.FC<AddressFormProps> = ({ onNext }) => {
     const { name, value } = e.target
     setAddressForm((prev) => ({ ...prev, [name]: value }))
 
-    // Trigger ViaCEP lookup when zipCode changes
     if (name === "zipCode" && value.length === 8) {
       fetchAddress(value)
     }
