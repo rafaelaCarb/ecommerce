@@ -1,8 +1,31 @@
-import { FC } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { products } from "../constants/index";
+import { SearchRequest, SortType } from "../commons/search";
+import { Product } from "../commons/product";
+import { ProductService } from "../service/ProductService";
 
 const BestSellers: FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const fetchProducts = useCallback(async () => {
+    const params: SearchRequest = {
+      filters: [],
+      page: 0,
+      rows: 5,
+      sort: {
+        field: "rating",
+        type: SortType.DESC
+      }
+    };
+
+    const response = await new ProductService().search(params);
+    setProducts(response.content);
+  }, []);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-8">
@@ -16,7 +39,7 @@ const BestSellers: FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
