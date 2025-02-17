@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AllProducts from "../components/AllProducts";
 
-const HomePage = () => {
+const ProductsPage = () => {
   return (
     <>
       <Navbar />
@@ -12,4 +12,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default ProductsPage
