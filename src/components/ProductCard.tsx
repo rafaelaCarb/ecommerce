@@ -1,4 +1,3 @@
-import { type FC } from "react"
 import { Link } from "react-router-dom"
 import { Heart } from "lucide-react"
 import { Product } from "../commons/product"
@@ -7,7 +6,7 @@ interface ProductCardProps {
   product: Product
 }
 
-const ProductCard: FC<ProductCardProps> = ({ product }) => {
+const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Link to={`/produto/${product.id}`} className="group relative block">

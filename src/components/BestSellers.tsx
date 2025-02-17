@@ -1,10 +1,10 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { SearchRequest, SortType } from "../commons/search";
 import { Product } from "../commons/product";
 import { ProductService } from "../service/ProductService";
 
-const BestSellers: FC = () => {
+const BestSellers = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   const fetchProducts = useCallback(async () => {

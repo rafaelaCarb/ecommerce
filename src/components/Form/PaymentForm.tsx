@@ -17,7 +17,7 @@ interface PaymentFormProps {
   onPrevious: () => void;
 }
 
-const PaymentForm: React.FC<PaymentFormProps> = ({ onSubmit, onPrevious }) => {
+const PaymentForm = ({ onSubmit, onPrevious }: PaymentFormProps) => {
   const [paymentForm, setPaymentForm] = useState<PaymentFormData>({
     cardNumber: "",
     cardName: "",

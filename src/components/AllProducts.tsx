@@ -1,4 +1,4 @@
-import { type FC, useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { SlidersHorizontal } from "lucide-react";
@@ -20,7 +20,7 @@ function genFilter(filter: string) {
   }
 }
 
-const AllProducts: FC = () => {
+const AllProducts = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [products, setProducts] = useState<Product[]>([]);

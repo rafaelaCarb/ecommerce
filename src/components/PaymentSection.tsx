@@ -1,10 +1,9 @@
-import type React from "react";
 import { useState } from "react";
 import AddressForm from "../components/Form/AddressForm";
 import PaymentForm from "../components/Form/PaymentForm";
 import { MapPin, IdCard } from "lucide-react";
 
-const PaymentSection: React.FC = () => {
+const PaymentSection = () => {
   const [step, setStep] = useState(1);
 
   const handleNext = () => {
@@ -16,7 +15,6 @@ const PaymentSection: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Handle form submission here
     console.log("Form submitted");
   };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FormData } from "../../commons/form-data";
 
-const SignupSection: React.FC = () => {
+const SignupSection = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",

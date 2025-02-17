@@ -13,7 +13,7 @@ interface AddressFormProps {
   onNext: (data: AddressFormData) => void
 }
 
-const AddressForm: React.FC<AddressFormProps> = ({ onNext }) => {
+const AddressForm = ({ onNext }: AddressFormProps) => {
   const [addressForm, setAddressForm] = useState<AddressFormData>({
     street: "",
     city: "",
