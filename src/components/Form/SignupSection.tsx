@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { FormData } from "../../commons/form-data";
+import { useNavigate } from "react-router-dom";
+import AuthService from "../../service/AuthService";
 
 const SignupSection = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    username: "",
     email: "",
     phone: "",
     password: "",
   });
 
-  const [message, setMessage] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [apiError, setApiError] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -20,33 +22,22 @@ const SignupSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.password
-    ) {
-      setError("Por favor, preencha todos os campos.");
-      setMessage(null);
-      return;
-    }
+  const onClickSignup = async () => {
+    setApiError(false);
+    const response = await AuthService.signup(formData);
 
-    try {
-      setMessage("Conta criada com sucesso!");
-      setError(null);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        password: "",
-      });
-    } catch (error) {
-      setError("Ocorreu um erro ao criar a conta.");
-      setMessage(null);
+    if (response?.status === 200 || response?.status === 201) {
+        setTimeout(() => {
+            navigate('/login');
+        }, 2000);
+    } else {
+        if (response?.data?.validationErrors) {
+          setApiError(response.data.validationErrors);
+        }
+        setApiError(true);
     }
-  };
+}
+
 
   return (
     <section className="bg-gradient-to-b from-amber-100 from-0% via-rose-100 via-50% to-gray-300 to-100% w-screen flex items-center justify-center h-screen">
@@ -57,12 +48,7 @@ const SignupSection = () => {
             <h1 className="text-center font-inter leading-tight tracking-tight md:text-3xl">
               Registre-se
             </h1>
-            {message && (
-              <p className="text-green-500 text-sm mb-4">{message}</p>
-            )}
-            {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <form
-              onSubmit={handleSubmit}
               className="space-y-4 md:space-y-6"
               action="#"
             >
@@ -72,9 +58,9 @@ const SignupSection = () => {
                 </label>
                 <input
                   type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
+                  name="username"
+                  id="username"
+                  value={formData.username}
                   onChange={handleChange}
                   className="bg-gray-50 focus:bg-gray-50 focus:ring-0 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5"
                   placeholder="Nome Sobrenome"
@@ -149,11 +135,12 @@ const SignupSection = () => {
                 </div>
               </div>
               <button
-                type="submit"
+                onClick={onClickSignup}
                 className="w-full text-white bg-stone-900 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
               >
                 Criar conta
               </button>
+              {apiError && <div className="text-sm text-center text-red-400 mt-2">Falha ao cadastrar-se!</div>}
               <p className="text-sm font-light text-gray-500">
                 Já possui uma conta?{" "}
                 <a

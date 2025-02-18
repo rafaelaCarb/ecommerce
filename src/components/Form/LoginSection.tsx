@@ -1,10 +1,11 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserLogin } from "../../commons/user-login";
+import AuthService from "../../service/AuthService";
 
 const LoginSection = () => {
   const [form, setForm] = useState<UserLogin>({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -54,18 +55,18 @@ const LoginSection = () => {
         <form className="space-y-6">
           <div className="space-y-2">
             <label
-              htmlFor="email"
+              htmlFor="username"
               className="block text-start text-sm font-medium text-gray-500"
             >
-              Email
+              Nome de usuário
             </label>
             <input
-              id="email"
-              type="email"
+              id="username"
+              name="username"
+              type="username"
               onChange={onChange}
               required
               className="mt-1 block w-full rounded-md border text-gray-500 border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-              placeholder="nome@email.com"
             />
           </div>
           <div className="space-y-2">
@@ -77,6 +78,7 @@ const LoginSection = () => {
             </label>
             <input
               id="password"
+              name="password"
               onChange={onChange}
               type="password"
               required
@@ -109,7 +111,7 @@ const LoginSection = () => {
             <button
               disabled={pendingApiCall}
               onClick={onClickLogin}
-              type="submit"
+              // type="submit"
               className="bg-stone-900 flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
             >
               Entrar

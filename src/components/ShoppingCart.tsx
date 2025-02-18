@@ -1,13 +1,35 @@
-import { allProducts } from "../constants";
+import { useCallback, useEffect, useState } from "react";
+import { Product } from "../commons/product";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import { ProductService } from "../service/ProductService";
 
 const ShoppingCart = () => {
   const { cartItems, cartQuantity } = useShoppingCart();
+  const [products, setProducts] = useState<Record<number, Product>>({});
   const navigate = useNavigate();
+
+  // Função para buscar um produto pelo ID e armazená-lo no estado
+  const fetchProduct = useCallback(async (id: number) => {
+    if (!products[id]) {
+      try {
+        const response = await new ProductService().findById(id);
+        setProducts((prev) => ({ ...prev, [id]: response.data }));
+      } catch (error) {
+        console.error(`Erro ao buscar produto ${id}:`, error);
+      }
+    }
+  }, [products]);
+
+  // Busca todos os produtos do carrinho
+  useEffect(() => {
+    cartItems.forEach((item) => fetchProduct(item.id));
+  }, [cartItems, fetchProduct]);
+
+  // Calcula o subtotal
   const subtotal = cartItems.reduce((total, item) => {
-    const product = allProducts.find((p) => p.id === item.id);
+    const product = products[item.id];
     return total + (product?.price || 0) * item.quantity;
   }, 0);
 
@@ -18,24 +40,24 @@ const ShoppingCart = () => {
   return (
     <div className="container mx-auto py-24">
       <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-inter mb-6 text-center sm:text-start">
-              CARRINHO DE COMPRAS
-            </h2>
-            {cartQuantity ? (
-              <div className="space-y-4">
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} {...item} />
-                ))}
+        <div className="lg:col-span-2">
+          <h2 className="text-2xl font-inter mb-6 text-center sm:text-start">
+            CARRINHO DE COMPRAS
+          </h2>
+          {cartQuantity ? (
+            <div className="space-y-4">
+              {cartItems.map((item) => (
+                <CartItem key={item.id} {...item} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex items-center justify-center">
+              <div className="md:w-1/3 p-1 text-center text-xl shadow-sm font-light border rounded-md">
+                Seu carrinho está vazio!
               </div>
-            ) : (
-              <div className="flex items-center justify-center">
-                <div className="md:w-1/3 p-1 text-center text-xl shadow-sm font-light border rounded-md">
-                  Seu carrinho está vazio!
-                </div>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
+        </div>
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow p-6">
             <h3 className="text-xl font-medium mb-4">Resumo do pedido</h3>
